@@ -1,0 +1,56 @@
+{
+  "name": "dsh-volcark-plan-quota",
+  "version": "1.0.0",
+  "description": "DeepSeek Harness sidebar widget for Volcano Ark Agent/Coding Plan quota via official ark-cli SSO",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-runtime"
+      ],
+      "platform": "web"
+    }
+  },
+  "files": [
+    "lib/*.js",
+    "scripts/*.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/arkcli.js && node --check lib/client.js",
+    "enable": "node scripts/enable.mjs",
+    "disable": "node scripts/disable.mjs"
+  },
+  "dependencies": {
+    "@volcengine/ark-cli": "^1.0.15"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "author": "XJQ <msir98001@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MSIR98001/dsh-volcark-plan-quota.git"
+  },
+  "homepage": "https://github.com/MSIR98001/dsh-volcark-plan-quota#readme",
+  "bugs": {
+    "url": "https://github.com/MSIR98001/dsh-volcark-plan-quota/issues"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "volcengine",
+    "ark",
+    "agent-plan",
+    "quota"
+  ]
+}
